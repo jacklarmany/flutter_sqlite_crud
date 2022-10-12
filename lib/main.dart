@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sqlite_crud/screens/homepage.dart';
 import './models/db_model.dart';
 import './models/todo_model.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  var db = DatabaseConnect();
-  //insert data to database;
-  await db.insertTodo(Todo(
-    id: 1,
-    title: 'this is sample data',
-    creationDate: DateTime.now(),
-    isChecked: false,
-  ));
+  // WidgetsFlutterBinding.ensureInitialized();
+  // var db = DatabaseConnect();
+  // // insert data to database;
+  // await db.insertTodo(Todo(
+  //   id: 1,
+  //   title: 'this is sample data',
+  //   creationDate: DateTime.now(),
+  //   isChecked: false,
+  // ));
   // print(await db.getTodo());
   runApp(const MyApp());
 }
@@ -28,13 +29,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Todo"),
-        ),
-        body: const Center(
-          child: Text("ddd"),
-        ),
+      home: const Scaffold(
+        body: Homepage(),
       ),
     );
   }
